@@ -9,7 +9,7 @@ function App() {
     // Centre map
     latitude: 45.4211, longitude: -75.6903,
     // 100% width & height
-    width: "100vw", height: "100vh",
+    width: "90vw", height: "100vh",
     zoom: 10
   });
 
@@ -24,7 +24,6 @@ function App() {
     window.addEventListener("keydown", listener);
     return () => { window.removeEventListener("keydown", listener); };
   }, []);
-
 
   return (
     <div>
@@ -44,6 +43,7 @@ function App() {
               className="marker-btn"
               onClick={e => {
                 e.preventDefault();
+                console.log(park)
                 setSelectedPark(park);
               }}
             >
@@ -65,7 +65,7 @@ function App() {
               <p>{selectedPark.properties.DESCRIPTIO}</p>
             </div>
           </Popup>
-        ) : null}
+        ) : null }
       </ReactMapGL>
     </div>  );
 }
